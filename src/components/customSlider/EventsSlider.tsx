@@ -42,7 +42,7 @@ export default function EventsSlider({ SLIDER_DATA, currentIndex, isMobile }: Ev
   }, [currentIndex, displayed]);
 
   return (
-    <div className="events_wrapper" ref={elRef} style={{ opacity: 1 }}>
+    <div className="events-slider" ref={elRef} style={{ opacity: 1 }}>
       {navigationReady && (
         <Swiper
           freeMode={true}
@@ -56,15 +56,15 @@ export default function EventsSlider({ SLIDER_DATA, currentIndex, isMobile }: Ev
         >
           {SLIDER_DATA[displayed].events.map((event, idx) => (
             <SwiperSlide key={idx}>
-                <p className='event-date'>{event.eventDate}</p>
-                <p className='event-description'>{event.eventDescription}</p>
+                <p className='events-slider__date'>{event.eventDate}</p>
+                <p className='events-slider__description'>{event.eventDescription}</p>
             </SwiperSlide>
           ))}
         </Swiper>
       )}
 
-      <button tabIndex={0} ref={prevRef} className="my-swiper-prev button">❮</button>
-      <button tabIndex={0} ref={nextRef} className="my-swiper-next button">❯</button>
+      <button tabIndex={0} ref={prevRef} className="events-slider__nav events-slider__nav--prev button">❮</button>
+      <button tabIndex={0} ref={nextRef} className="events-slider__nav events-slider__nav--next button">❯</button>
     </div>
   );
 }

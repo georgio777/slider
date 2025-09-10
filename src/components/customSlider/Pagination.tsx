@@ -9,7 +9,7 @@ interface PaginationProps {
 export default function Pagination({ currentIndex, SLIDER_DATA}: PaginationProps) {
   return (
     <div className="pagination">
-      <p>{currentIndex + 1}/{SLIDER_DATA.length}</p>
+      <p className="pagination__text">{currentIndex + 1}/{SLIDER_DATA.length}</p>
     </div>
   )
 }

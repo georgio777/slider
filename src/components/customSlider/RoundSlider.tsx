@@ -49,14 +49,14 @@ export default function RoundSlider({ currentIndex, itemClickHandler, SLIDER_DAT
   }, [])
 
   return (
-    <div className="circle_container">
+    <div className="round-slider">
       <div 
         ref={circleElRef}
         style={{
           transform: `rotate(-${currentIndex * ANGLE}deg)`,
           transition: resizing ? 'none' : 'transform 1s'
         }}
-        className="circle"
+        className="round-slider__circle"
       >
         {SLIDER_DATA.map((period, index) => 
           <SliderItem 

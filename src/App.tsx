@@ -4,7 +4,7 @@ import SLIDER_DATA from './data/sliderData';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <CustomSlider SLIDER_DATA={SLIDER_DATA} name={'Исторические даты'} />
       <CustomSlider SLIDER_DATA={SLIDER_DATA} name={'Исторические даты 2'} />
     </div>

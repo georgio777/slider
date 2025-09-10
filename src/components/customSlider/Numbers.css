@@ -1,18 +1,18 @@
-.num-area {
+.numbers {
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
 }
 
-.num-inner {
+.numbers__inner {
   position: absolute;
   display: flex;
   flex-direction: column;
   transition: 1.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.num {
+.numbers__digit {
   font-size: clamp(5.6rem, 8vw, 20rem);
   font-weight: 600;
 }

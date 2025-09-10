@@ -34,12 +34,12 @@ export default function SliderItem({
         `,
         transition: resizing ? 'none' : 'transform 1s'
       }} 
-      className={`slider_item ${index === currentIndex ? 'slider_item-active' : ''}`}
+      className={`slider-item ${index === currentIndex ? 'slider-item--active' : ''}`}
     >
-      <div className="slider_item-name">{period.name}</div>
-      <span className="slider_item-dot"></span>
-      <div className="slider-item-inner">
-        <span className="slider-item-number">
+      <div className="slider-item__name">{period.name}</div>
+      <span className="slider-item__dot"></span>
+      <div className="slider-item__inner">
+        <span className="slider-item__number">
           {period.id}
         </span>
       </div>

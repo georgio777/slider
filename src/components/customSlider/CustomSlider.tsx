@@ -49,13 +49,13 @@ export default function CustomSlider({ SLIDER_DATA, name }: CustomSliderProps) {
 
   return (
     <div className="custom-slider">
-      <div className="slider_outer-container">
-        <div className="slider-wrapper">
+      <div className="custom-slider__container">
+        <div className="custom-slider__wrapper">
           {!isMobile && <BackgroundSquares />}
-          <div className="slider-inner-container">
+          <div className="custom-slider__inner">
             <SliderHeading name={name} />
             <Years SLIDER_DATA={SLIDER_DATA} currentIndex={currentIndex} />
-            <div className="horizontal"></div>
+            <div className="custom-slider__divider"></div>
             <Pagination currentIndex={currentIndex} SLIDER_DATA={SLIDER_DATA} /> 
             <SliderControls 
             controlsNext={controlsNext} 

@@ -1,4 +1,4 @@
-.squares-container {
+.background-squares {
   border-right: 1px solid hsl(222, 21%, 91%);
   border-left: 1px solid hsl(222, 21%, 91%);
   display: grid;
@@ -11,13 +11,13 @@
   grid-template-rows: 1fr 1fr;
 }
 
-.squares_item:first-child {
+.background-squares__item:first-child {
   border-right: 1px solid hsl(222, 21%, 91%);
   border-bottom: 1px solid hsl(222, 21%, 91%);
   grid-area: 1 / 1;
 }
 
-.squares_item:last-child {
+.background-squares__item:last-child {
   border-top: 1px solid hsl(222, 21%, 91%);
   border-left: 1px solid hsl(222, 21%, 91%);
   grid-area: 2 / 2;

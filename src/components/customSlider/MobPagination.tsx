@@ -12,7 +12,7 @@ export default function MobPagination({currentIndex, setCurrentIndex, SLIDER_DAT
     <div className="mob-pagination">
       {Array.from({ length: SLIDER_DATA.length }, (_, index) => (
           <span 
-            className={`mob-pagination-item ${index === currentIndex ? 'mob-pagination-item-active' : ''} `} 
+            className={`mob-pagination__item ${index === currentIndex ? 'mob-pagination__item--active' : ''} `} 
             key={index}
             onClick={() => setCurrentIndex(index)}
           >

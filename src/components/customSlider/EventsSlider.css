@@ -1,4 +1,4 @@
-.events_wrapper {
+.events-slider {
   width: 100%;
   position: relative;
   height: 150px;
@@ -6,15 +6,13 @@
   align-items: stretch;
 }
 
-
-
-.event-date {
+.events-slider__date {
   font-size: 2.5rem;
   color: #3877EE;
   font-family: "Bebas Neue", sans-serif;
 }
 
-.event-description {
+.events-slider__description {
   font-size: 2rem;
   color: var(--primary);
 }
@@ -33,7 +31,7 @@
   user-select: none;
 }
 
-.my-swiper-next, .my-swiper-prev {
+.events-slider__nav {
   width: 4rem;
   height: 4rem;
   aspect-ratio: 1/1;
@@ -46,54 +44,49 @@
   font-weight: 600;
   transition: .2s ease;
   user-select: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.my-swiper-next:hover, .my-swiper-prev:hover,
-.my-swiper-next:focus, .my-swiper-prev:focus {
+.events-slider__nav:hover,
+.events-slider__nav:focus {
   transform: translateY(calc(-50% + 2px));
   background: white;
 }
 
-.my-swiper-next:active, .my-swiper-prev:active {
+.events-slider__nav:active {
   transform: translateY(-50%) scale(0.95);
 }
 
-.my-swiper-prev {
-  position: absolute;
+.events-slider__nav--prev {
   left: -60px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-.my-swiper-next {
-  position: absolute;
+.events-slider__nav--next {
   right: -60px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .swiper-button-next {
   right: -10px;
 }
 
-.my-swiper-prev.swiper-button-disabled,
-.my-swiper-next.swiper-button-disabled {
+.events-slider__nav.swiper-button-disabled {
   display: none;
 }
 
 
 @media (max-width: 1024px) {
-  .event-description {
+  .events-slider__description {
     font-size: 1.4rem;
   }
-  .event-date {
+  .events-slider__date {
     font-size: 1.6rem;
   }
-  .events_wrapper {
+  .events-slider {
     align-self: end;
   }
-  .my-swiper-next,
-  .my-swiper-prev {
+  .events-slider__nav {
     display: none;
   }
   .swiper-slide {

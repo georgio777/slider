@@ -10,7 +10,7 @@ export default function SliderHeading({ name }: HeadingProps) {
   return (
     <h2 className="slider-heading">
       {words.map((word, index) => (
-        <span key={index} className="slider-heading-word">
+        <span key={index} className="slider-heading__word">
           {word}
         </span>
       ))}

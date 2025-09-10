@@ -40,15 +40,15 @@ export default function Numbers({ number }: NumbersProps) {
         height: height,
         width: width
       }}
-      className="num-area"
+      className="numbers"
     >
       <div 
-        className="num-inner"
+        className="numbers__inner"
         style={{ transform: `translateY(-${number * height}px)` }}
       >
         {Array.from({ length: 10 }, (_, index) => (
           <span 
-            className='num' 
+            className='numbers__digit' 
             ref={index === 0 ? numRef : undefined} 
             key={index}
           >

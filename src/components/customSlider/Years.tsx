@@ -12,14 +12,14 @@ export default function Years({SLIDER_DATA, currentIndex}: YearsProps) {
   const secondPeriod = SLIDER_DATA[currentIndex].period[1].toString()
 
   return (
-    <div className="slider-years">
-      <div className="first-year year">
+    <div className="years">
+      <div className="years__period years__period--first">
         <Numbers number={Number(firstPeriod[0])} />
         <Numbers number={Number(firstPeriod[1])} />
         <Numbers number={Number(firstPeriod[2])} />
         <Numbers number={Number(firstPeriod[3])} />
       </div>
-      <div className="second-year year">
+      <div className="years__period years__period--second">
         <Numbers number={Number(secondPeriod[0])} />
         <Numbers number={Number(secondPeriod[1])} />
         <Numbers number={Number(secondPeriod[2])} />

@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.slider-heading-word {
+.slider-heading__word {
   font-size: clamp(2rem, 3vw, 5.6rem);
   color: var(--primary);
   line-height: 120%;
