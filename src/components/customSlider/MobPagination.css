@@ -1,0 +1,22 @@
+.mob-pagination {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.mob-pagination-item {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background: var(--primary);
+  opacity: 0.4;
+}
+
+.mob-pagination-item-active {
+  opacity: 1;
+}

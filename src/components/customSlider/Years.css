@@ -1,0 +1,30 @@
+.slider-years {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: clamp(2rem, 6vw, 10rem);
+}
+
+.year {
+  display: flex;
+}
+
+.first-year {
+  color: var(--text1);
+}
+
+.second-year {
+  color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .slider-years {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin: auto;
+  }
+}

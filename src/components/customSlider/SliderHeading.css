@@ -1,0 +1,30 @@
+.slider-heading::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 96%;
+  position: absolute;
+  top: 0;
+  left: -80px;
+  background: linear-gradient(180deg,rgba(56, 119, 238, 1) 0%, rgba(239, 93, 168, 1) 100%);;
+}
+
+
+
+.slider-heading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-heading-word {
+  font-size: clamp(2rem, 3vw, 5.6rem);
+  color: var(--primary);
+  line-height: 120%;
+}
+
+@media (max-width: 1324px) {
+  .slider-heading::before {
+    display: none;
+  }
+}

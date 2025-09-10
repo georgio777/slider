@@ -1,0 +1,16 @@
+.pagination {
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.pagination p {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+  .pagination {
+    order: 5;
+    margin-bottom: 1rem;
+  }
+}

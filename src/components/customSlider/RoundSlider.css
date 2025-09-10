@@ -1,0 +1,26 @@
+.circle_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vh;
+  aspect-ratio: 1/1;
+  max-width: 70%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.circle {
+  border: 1px solid hsl(221, 20%, 85%);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 1s ease;
+  width: 50vh;
+  aspect-ratio: 1/1;
+}
