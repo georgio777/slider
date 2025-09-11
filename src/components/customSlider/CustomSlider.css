@@ -1,13 +1,13 @@
 .custom-slider {
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   background: var(--bg);
 }
 
 .custom-slider__container {
   width: clamp(300px, 90vw, 1440px);
   margin: 0 auto;
-  height: 100dvh;
+  height: 100vh;
   position: relative;
 }
 
