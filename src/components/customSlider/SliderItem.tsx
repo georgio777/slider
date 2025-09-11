@@ -22,7 +22,7 @@ export default function SliderItem({
 }: SliderItemProps) {
   
   return (
-    <div
+    <button
       onKeyDown={() => callback(index)}
       onClick={() => callback(index)}
       tabIndex={0}
@@ -43,6 +43,6 @@ export default function SliderItem({
           {period.id}
         </span>
       </div>
-    </div>
+    </button>
   )
 }
