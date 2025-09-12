@@ -14,16 +14,16 @@ export default function Years({SLIDER_DATA, currentIndex}: YearsProps) {
   return (
     <div className="years">
       <div className="years__period years__period--first">
-        <Numbers number={Number(firstPeriod[0])} />
-        <Numbers number={Number(firstPeriod[1])} />
-        <Numbers number={Number(firstPeriod[2])} />
-        <Numbers number={Number(firstPeriod[3])} />
+        { Array.from(firstPeriod).map(digit => (
+          <Numbers number={Number(digit)} />
+          )) 
+        }
       </div>
       <div className="years__period years__period--second">
-        <Numbers number={Number(secondPeriod[0])} />
-        <Numbers number={Number(secondPeriod[1])} />
-        <Numbers number={Number(secondPeriod[2])} />
-        <Numbers number={Number(secondPeriod[3])} />
+        { Array.from(secondPeriod).map(digit => (
+          <Numbers number={Number(digit)} />
+          )) 
+        }      
       </div>
     </div>
   )
