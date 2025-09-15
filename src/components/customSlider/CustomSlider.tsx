@@ -47,6 +47,10 @@ export default function CustomSlider({ SLIDER_DATA, name }: CustomSliderProps) {
     )
   }
 
+  const changeCurrentIndex = (idx: number) => {
+    setCurrentIndex(idx)
+  }
+
   return (
     <div className="custom-slider">
       <div className="custom-slider__container">
@@ -62,7 +66,10 @@ export default function CustomSlider({ SLIDER_DATA, name }: CustomSliderProps) {
             controlsPrev={controlsPrev} 
             />
             <EventsSlider SLIDER_DATA={SLIDER_DATA} currentIndex={currentIndex} isMobile={isMobile}/>
-            { isMobile && <MobPagination currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} SLIDER_DATA={SLIDER_DATA}/>}
+            { isMobile && <MobPagination 
+            currentIndex={currentIndex} 
+            changeCurrentIndex={changeCurrentIndex} 
+            SLIDER_DATA={SLIDER_DATA}/>}
 
           </div>
           {!isMobile && (

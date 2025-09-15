@@ -1,10 +1,11 @@
 import './SliderHeading.css'
+import React from 'react';
 
 interface HeadingProps {
   name: string;
 }
 
-export default function SliderHeading({ name }: HeadingProps) {
+function SliderHeading({ name }: HeadingProps) {
   const words = name.split(' '); 
 
   return (
@@ -17,3 +18,5 @@ export default function SliderHeading({ name }: HeadingProps) {
     </h2>
   );
 }
+
+export default React.memo(SliderHeading)

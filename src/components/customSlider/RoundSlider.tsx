@@ -61,7 +61,7 @@ export default function RoundSlider({ currentIndex, itemClickHandler, SLIDER_DAT
         {SLIDER_DATA.map((period, index) => 
           <SliderItem 
             resizing={resizing}
-            callback={itemClickHandler}
+            itemClickHandler={itemClickHandler}
             key={period.id}
             period={period} 
             ANGLE={ANGLE}

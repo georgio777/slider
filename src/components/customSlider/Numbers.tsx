@@ -1,61 +1,36 @@
-import { useLayoutEffect, useRef, useState, useCallback } from 'react'
 import './Numbers.css'
+import React from 'react'
 
 interface NumbersProps {
   number: number
+  digitSize: { width: number; height: number }
 }
 
-export default function Numbers({ number }: NumbersProps) {
-  const numRef = useRef<HTMLSpanElement>(null)
-  const resizeObserverRef = useRef<ResizeObserver | null>(null)
-  const [height, setHeight] = useState(0)
-  const [width, setWidth] = useState(0)
+const DIGITS = Array.from({ length: 10 }, (_, index) => index)
 
-  const updateDimensions = useCallback(() => {
-    if (numRef.current) {
-      setHeight(numRef.current.offsetHeight)
-      setWidth(numRef.current.offsetWidth)
-    }
-  }, [])
-
-  useLayoutEffect(() => {
-    updateDimensions()
-
-    resizeObserverRef.current = new ResizeObserver(updateDimensions)
-
-    if (numRef.current) {
-      resizeObserverRef.current.observe(numRef.current)
-    }
-
-    return () => {
-      if (resizeObserverRef.current) {
-        resizeObserverRef.current.disconnect()
-      }
-    }
-  }, [updateDimensions])
+function Numbers({ number, digitSize }: NumbersProps) {
+  const { width, height } = digitSize
 
   return (
     <div
       style={{
         height: height,
-        width: width
+        width: width,
       }}
       className="numbers"
     >
-      <div 
+      <div
         className="numbers__inner"
         style={{ transform: `translateY(-${number * height}px)` }}
       >
-        {Array.from({ length: 10 }, (_, index) => (
-          <span 
-            className='numbers__digit' 
-            ref={index === 0 ? numRef : undefined} 
-            key={index}
-          >
-            {index}
+        {DIGITS.map((digit) => (
+          <span className="numbers__digit" key={digit}>
+            {digit}
           </span>
         ))}
       </div>
     </div>
   )
 }
+
+export default React.memo(Numbers)

@@ -5,7 +5,7 @@ interface SliderItemProps {
   resizing: boolean;
   period: SliderData[number]; 
   ANGLE: number;
-  callback: (index: number) => void;
+  itemClickHandler: (index: number) => void;
   circleDiameter: number;
   currentIndex: number;
   index: number;
@@ -15,7 +15,7 @@ export default function SliderItem({
   resizing, 
   period, 
   ANGLE, 
-  callback, 
+  itemClickHandler, 
   circleDiameter, 
   currentIndex, 
   index 
@@ -23,8 +23,8 @@ export default function SliderItem({
   
   return (
     <button
-      onKeyDown={() => callback(index)}
-      onClick={() => callback(index)}
+      onKeyDown={() => itemClickHandler(index)}
+      onClick={() => itemClickHandler(index)}
       tabIndex={0}
       style={{
         transform: `

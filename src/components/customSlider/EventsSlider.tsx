@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import { useRef, useState, useEffect } from 'react';
+import { useGSAP } from '@gsap/react';
 import { gsap } from "gsap";
 import './EventsSlider.css';
 import 'swiper/css/free-mode';
@@ -17,29 +18,29 @@ export default function EventsSlider({ SLIDER_DATA, currentIndex, isMobile }: Ev
   const [displayed, setDisplayed] = useState(currentIndex);
   const [navigationReady, setNavigationReady] = useState(false);
   const elRef = useRef<HTMLDivElement>(null);
-  const tlRef = useRef<gsap.core.Timeline | null>(null);
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const displayedRef = useRef(currentIndex);
+
+  useGSAP(() => {
+    if (currentIndex === displayedRef.current) return;
+
+    const tl = gsap.timeline();
+    tl
+      .to(elRef.current, { opacity: 0, duration: 0.3 })
+      .add(() => {
+        displayedRef.current = currentIndex;
+        setDisplayed(currentIndex);
+      })
+      .to(elRef.current, { opacity: 1, duration: 0.2, delay: 0.7 });
+
+  }, { dependencies: [currentIndex] });
 
   useEffect(() => {
     if (prevRef.current && nextRef.current) {
       setNavigationReady(true);
     }
   }, []);
-
-  useEffect(() => {
-    if (!elRef.current) return;
-
-    if (currentIndex !== displayed) {
-      tlRef.current?.kill();
-      tlRef.current = gsap.timeline();
-
-      tlRef.current
-        .to(elRef.current, { opacity: 0, duration: 0.3 })
-        .add(() => setDisplayed(currentIndex))
-        .to(elRef.current, { opacity: 1, duration: 0.2, delay: 0.7 });
-    }
-  }, [currentIndex, displayed]);
 
   return (
     <div className="events-slider" ref={elRef} style={{ opacity: 1 }}>
