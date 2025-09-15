@@ -3,9 +3,8 @@
 ---
 
 ## Пример тут
-```
 <https://slider-georgio.netlify.app/>
-```
+
 
 ## 🚀 Быстрый старт
 
