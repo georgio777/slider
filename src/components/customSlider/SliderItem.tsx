@@ -23,7 +23,11 @@ export default function SliderItem({
   
   return (
     <button
-      onKeyDown={() => itemClickHandler(index)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          itemClickHandler(index)
+        }
+      }}
       onClick={() => itemClickHandler(index)}
       tabIndex={0}
       style={{

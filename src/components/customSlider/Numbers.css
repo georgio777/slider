@@ -18,6 +18,8 @@
 }
 
 .numbers__digit--hidden {
+  left: -9999px; 
+  top: -9999px;
   position: absolute;
   visibility: hidden;
   pointer-events: none;
